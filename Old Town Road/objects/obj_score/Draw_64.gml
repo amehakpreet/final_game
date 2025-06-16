@@ -31,4 +31,3 @@ draw_text(text_x, text_y, score_text);
 
 
 
-
