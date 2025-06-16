@@ -1,7 +1,7 @@
 /// obj_gameover: Draw GUI Event
 
-// (Optional) Draw a background so you see the full GUI area.
-draw_set_color(c_gray);
+// Draw the background in black.
+draw_set_color(c_black);
 draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), false);
 
 // Get GUI dimensions.
@@ -40,7 +40,7 @@ draw_text(score_text_x, score_text_y, score_text);
 // ----------------------------------------
 var restart_box_width  = 150;
 var restart_box_height = 50;
-var restart_margin_top = 20; // gap between boxes
+var restart_margin_top = 20; // Gap between boxes
 
 // Position the restart button centered below the score box.
 var restart_box_x = (gui_w - restart_box_width) * 0.5;
@@ -65,3 +65,14 @@ var restart_text_y = restart_box_y + (restart_box_height - restart_text_h) * 0.5
 draw_set_color(c_white);
 draw_text(restart_text_x, restart_text_y, restart_text);
 
+// ----------------------------------------
+// Draw Help Text Below Restart Button
+// ----------------------------------------
+var help_text = "Click here for help!";
+var help_text_w = string_width(help_text);
+var help_text_h = string_height(help_text);
+var help_text_x = restart_box_x + (restart_box_width - help_text_w) * 0.5;
+var help_text_y = restart_box_y2 + 10; // Small gap below restart box
+
+draw_set_color(c_green);
+draw_text(help_text_x, help_text_y, help_text);
